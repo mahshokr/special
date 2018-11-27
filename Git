@@ -1,0 +1,224 @@
+- Key Concepts 
+- congure on windows
+- intialize project
+- work locally
+- Going Remote
+
+===== CMD ======
+ Git Bash For Windows
+
+===== Key Concepts =====
+
+Distributed / Decentralized 
+more  operation are local 
+
+===== Branches ========
+Timeline with commit
+master branch is the main  ,  default branch
+
+====== Head ===========
+Head => Pointer to last commit on branch
+
+====== Remote =========
+Related Repository - but not local
+- Github  , GitLab  , BitBucket and others
+
+========= Git WorkFlow - Start Local ==============
+
+init => add => commit => push "to Git"
+
+to get the others changes 
+> pull
+
+========= Git WorkFlow - Start Remote ==============
+
+go to github and setup the GitHub Repository and make 
+> clone
+to create a new Repository on our local system 
+
+note => any time you want to start new work you should Pull first to be aware of changes
+
+=====================================
+======= Commands ====================
+=====================================
+
+> git help
+"return help options"
+
+--------
+we should configure git with email and password
+
+============== Configuration Commands ===============
+=====================================================
+pwd  => present working directory
+
+Configure User and Email
+$ git config --global user.name "mahmoud shokr"
+$ git config --global user.email "mahmoudshokr44@gmail.com"
+
+
+Listing All Global Configuration Settings
+$ git config --global --list 
+>> user.name "mahmoud shokr"
+>> user.email "mahmoudshokr44@gmail.com"          
+
+git create a simple text file ".gitconfig"
+Seeing Git's User-based Config file
+$ cat ~/.gitconfig
+
+===============================================================
+
+we have two ways 
+1 - inialize an existing project with git 
+2 - start from scratch
+
+======== start from scratch ==========
+open git bash into your folder and type
+
+> git init git-demo
+// a new directory is created
+
+> ls 
+to show the files in that directory
+
+>ls -a 
+to show the hidden files 
+.git will appear 
+
+========= start with an existing project ===========
+
+open git bash inside your project directory 
+> git init 
+
+============= the first commit =============
+
+1 - create a README.md file 
+> notepad README.md
+
+>ls
+this file will appear here 
+
+======
+Shows which files have been modified in the working directory vs Git's staging area.
+> git status 
+=======
+=================
+Adds the new or newly modified file-name to Git's staging area (index).
+>  git add README.md 
+==================
+> git status 
+=========================
+Commits all files currently in Git's staging area. The -m parameter allows for a commit message directly from the command line.
+>git commit -m "type your comment here "
+=============================
+> git status 
+=> nothing to commit, working tree clean 
+
+a shortcut for this command
+> git commit -am " comment here "
+here i will add and commit in the same command line 
+
+===============================
+
+git status
+git reset HEAD README.md
+clear
+git status
+notepad README.md
+git checkout -- README.md
+notepad README.md
+git status
+
+
+> git log 
+display the history of all the commit command that i made before 
+git log
+git help log
+git log --oneline --graph --decorate --color
+
+
+Lecture Command Listing -- Removing Files
+pwd
+git status
+notepad debug.log
+ls
+git status
+git add .
+git status
+git commit -m "adding log file that really does not belong here"
+clear
+git status
+git rm debug.log // removw
+ls
+git status
+git commit -m "removing log file"
+clear
+notepad info.log
+ls
+git add info.log
+git commit -m "adding info log"
+git status
+clear
+ls
+rm info.log
+ls
+git status
+git add .
+git add -u
+>>>>> The -u parameter will recursively update Git's staging area regarding deleted/moved files outside of Git.
+
+clear
+git status
+git commit -m "Removing info.log"
+
+
+=================
+Lecture Command Listing -- Moving Files
+ls
+mkdir web   // make a directory folder 
+ls
+git mv index.html web  // move  the file into web folder
+cd web/
+ll
+pwd
+cd ..
+ls
+git status
+git commit -m "Moving index.html file to web folder"
+clear
+
+===============================
+
+Lecture Command Listing -- Ignoring Files
+mate application.log
+ls
+git status
+mate .iitignore
+git status
+ls -a
+git add .gitignore
+clear
+git status
+git commit -m "adding ignore file"
+
+======= setup our ssh key =============
+use ssh authentication with github , once we setup our account
+
+> cd ~
+to be in the root folder 
+and create a dirctory .ssh
+>mkdir .ssh
+
+cd .ssh
+pwd
+ssh-keygen -t rsa -C "jason@jasongtaylor.com"
+mate id_rsa.pub
+ssh -T git@github.com
+
+Generating an SSH Key
+
+ssh-keygen -t rsa -C "your.name@your-company.com"
+
+Verify SSH authentication
+
+ssh -T git@github.com
