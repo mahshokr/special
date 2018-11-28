@@ -11,6 +11,10 @@ import {Platform, StyleSheet, Text, View} from 'react-native';
 import Spalsh, { Splash } from './src/components/splash'
 import Language from './src/components/language'
 import Choose from './src/components/choose'
+
+
+
+
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
   android:
@@ -28,6 +32,8 @@ export default class App extends Component{
     );
   }
 }
+
+
 
 const styles = StyleSheet.create({
   container: {
