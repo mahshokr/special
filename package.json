@@ -12,6 +12,7 @@
     "react": "16.6.1",
     "react-native": "0.57.5",
     "react-native-button": "^2.3.0",
+    "react-native-gesture-handler": "^1.0.10",
     "react-native-material-design": "^0.3.7",
     "react-native-material-design-styles": "^0.2.7",
     "react-native-vector-icons": "^6.1.0",

@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { Text, View } from 'react-native'
 import Button from 'react-native-button'
 // import { Button } from 'native-base';
-import Detail from './src/components/detailComponent'
-import Third from './src/components/thirdComponent'
+import Detail from './detailComponent'
+import Third from './thirdComponent'
  class MainComponent extends Component {
   render() {
     return (

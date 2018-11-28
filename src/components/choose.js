@@ -59,8 +59,8 @@ export default class Choose extends Component {
 
                 <Button title="تسجيل صالون" /> */}
                 <Content>
-                  <Button bordered light transparent>
-                    <Text>تسجيل الدخول</Text>
+                  <Button rounded bordered light transparent>
+                    <Text style = {{width : 150 }}>تسجيل الدخول</Text>
                   </Button>
                 </Content>
               </View>

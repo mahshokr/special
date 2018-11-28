@@ -8,7 +8,7 @@ import {
   StyleSheet,
   Image,
   TouchableOpacity , 
-  Alert , 
+  Alert ,  
   Modal
 } from "react-native";
 export default class Language extends Component {
